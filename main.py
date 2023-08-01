@@ -2,6 +2,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from dotenv import load_dotenv
 import openai
+import sqlite3
 import os 
 
 load_dotenv()
@@ -9,6 +10,42 @@ load_dotenv()
 ##flask_app = os.environ.get('FLASK_APP')
 app = Flask(__name__, template_folder= 'template', static_folder= 'static')
 openai.api_key = os.getenv("OPENAI_API_KEY")
+def insert_db(name,song1,song2,song3,song4,song5,rec):
+    
+    conn = sqlite3.connect("songs.db")
+    cursor = conn.cursor()
+
+    cursor.execute(
+        """CREATE TABLE IF NOT EXISTS songRec (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    name TEXT NOT NULL,
+                    song1 TEXT NOT NULL,
+                    song2 TEXT NOT NULL,
+                    song3 TEXT NOT NULL,
+                    song4 TEXT NOT NULL,
+                    song5 TEXT NOT NULL,
+                    rec TEXT NOT NULL
+                )"""
+    )
+
+
+    cursor.execute(
+        "INSERT INTO songRec (\
+            name, song1, song2, song3, song4, song5, rec)\
+            VALUES (?,?,?,?,?,?,?)",
+        (
+            name,
+            song1,
+            song2,
+            song3,
+            song4,
+            song5,
+            rec
+        ),
+    )
+
+    conn.commit()
+    conn.close()
 
 @app.route('/results', methods = ['POST'])
 def reccomendation():
@@ -37,6 +74,7 @@ def reccomendation():
     )
     
     recommendation_text = rec.choices[0].message['content']
+    insert_db(name,song1,song2,song3,song4,song5,recommendation_text)
     return render_template('result.html', recommendation=recommendation_text)
 
 
@@ -51,4 +89,4 @@ def landing_page():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug = True)
+    app.run(host="0.0.0.0",debug = True)
