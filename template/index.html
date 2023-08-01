@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Asset&display=swap" rel="stylesheet">
+  <title>Let's groove Baby</title>
+  <style>
+    body{
+      background-color: yellow;
+      color: aquamarine;
+      font-family: 'Asset', sans-serif;
+    }
+    .header{
+      text-align: center;
+      font-size: 36px;
+    }
+    
+  </style>
+
+</head>
+<body>
+  <div class="header">
+    <h1> Let's Groove Dude </h1> 
+  </div>
+
+<a href="{{ url_for('insert_songs') }}">
+  <img src="{{ url_for('static', filename='images/mirror.png') }}" alt="noo">
+</a>
+  
+</body>
+</html>

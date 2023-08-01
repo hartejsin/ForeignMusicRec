@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recommendation Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 40px;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        .recommendation {
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 500px;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="recommendation">
+        <h1>Recommendation Results</h1>
+        <p>{{ recommendation }}</p>
+    </div>
+
+    <div class="footer">
+        <p>Powered by Flask and GPT-3.5 Turbo</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Asset&family=Victor+Mono&display=swap" rel="stylesheet">
+    <title>5 songs</title>
+    <style>
+        body{
+            background-color: blueviolet;
+            color: red;
+            font-family: 'Victor Mono', sans-serif;
+        }
+        .instructions{
+            text-align: center;
+            font-size: 36px;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class = "instructions">
+    <p>Enter 5 different songs and the artist who wrote them to recieve a new song reccomendation in a random language</p>
+</div>
+<div class="container">
+    <h1>Enter 5 Songs</h1>
+    <form action="/results" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="song1">Song 1:</label>
+        <input type="text" id="song1" name="song1" required><br>
+
+        <label for="song2">Song 2:</label>
+        <input type="text" id="song2" name="song2" required><br>
+
+        <label for="song3">Song 3:</label>
+        <input type="text" id="song3" name="song3" required><br>
+
+        <label for="song4">Song 4:</label>
+        <input type="text" id="song4" name="song4" required><br>
+
+        <label for="song5">Song 5:</label>
+        <input type="text" id="song5" name="song5" required><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</body>
+
+
+</html>
