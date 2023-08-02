@@ -7,7 +7,7 @@
 
 
 
-A web application to collect 5 songs from the user and return a song reccomendation in a random language.
+A web application to collect 5 songs from the user and return a punjabi song reccomendation. 
 The reccomendation is generated using OPENAI api: user name, songs, and rec uploadted to sqlite db. 
 ```
 To run: 
