@@ -61,7 +61,7 @@ def reccomendation():
     songs = f"{song1},{song2},{song3},{song4},{song5}"
     print(songs)
     instructions = "You will be provided a list of 5 songs. \
-        Select a random language and generate a song reccomendation based on the list of songs"
+        Generate a punjabi song reccomendation based on the list of songs"
     messages = [
         {"role": "system", "content": instructions},
     ]
